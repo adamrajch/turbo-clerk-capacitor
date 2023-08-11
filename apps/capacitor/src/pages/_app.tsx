@@ -2,7 +2,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import type { AppType } from "next/app";
 import "../styles/globals.css";
-import { TRPCProvider } from "../utils/trpc";
+import { trpc } from "../utils/trpc";
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
@@ -10,11 +10,9 @@ const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
       publishableKey="pk_test_dXNhYmxlLWZsZWEtMzIuY2xlcmsuYWNjb3VudHMuZGV2JA"
       {...pageProps}
     >
-      <TRPCProvider>
-        <Component {...pageProps} />
-      </TRPCProvider>
+      <Component {...pageProps} />
     </ClerkProvider>
   );
 };
 
-export default MyApp;
+export default trpc.withTRPC(MyApp);
