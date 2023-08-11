@@ -2,7 +2,7 @@ import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
   appId: "com.turbocapacitor.app",
-  appName: "@acme/capacitor",
+  appName: "@acme/turbocapacitor",
   webDir: "out",
   server: {
     androidScheme: "https",
